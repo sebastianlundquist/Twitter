@@ -2,6 +2,7 @@ package com.sebastianlundquist.twitter;
 
 import com.parse.Parse;
 import com.parse.ParseACL;
+import com.parse.ParseUser;
 
 import android.app.Application;
 
@@ -15,6 +16,8 @@ public class StarterApp extends Application {
 				.server("http://13.53.200.191:80/parse/")
 				.build()
 		);
+
+		ParseUser.logOut();
 
 		ParseACL defaultACL = new ParseACL();
 		defaultACL.setPublicReadAccess(true);
