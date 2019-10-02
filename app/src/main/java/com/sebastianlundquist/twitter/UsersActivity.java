@@ -61,8 +61,7 @@ public class UsersActivity extends AppCompatActivity {
 						public void done(ParseException e) {
 							if (e == null) {
 								Toast.makeText(UsersActivity.this, "Tweet posted!", Toast.LENGTH_SHORT).show();
-							}
-							else {
+							} else {
 								Toast.makeText(UsersActivity.this, "Tweet failed :(", Toast.LENGTH_SHORT).show();
 							}
 						}
@@ -77,6 +76,10 @@ public class UsersActivity extends AppCompatActivity {
 				}
 			});
 			builder.show();
+		}
+		else if (item.getItemId() == R.id.feed) {
+			Intent intent = new Intent(getApplicationContext(), FeedActivity.class);
+			startActivity(intent);
 		}
 		else if (item.getItemId() == R.id.logout) {
 			ParseUser.logOut();
