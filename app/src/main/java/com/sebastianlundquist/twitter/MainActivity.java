@@ -14,6 +14,8 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
 	public void redirectUser() {
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 					ParseUser newUser = new ParseUser();
 					newUser.setUsername(userInput.getText().toString());
 					newUser.setPassword(passwordInput.getText().toString());
+					newUser.put("isFollowing", new ArrayList<String>());
 					newUser.signUpInBackground(new SignUpCallback() {
 						@Override
 						public void done(ParseException e) {
