@@ -2,6 +2,7 @@ package com.sebastianlundquist.twitter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,6 +16,13 @@ import com.parse.SignUpCallback;
 
 public class MainActivity extends AppCompatActivity {
 
+	public void redirectUser() {
+		if (ParseUser.getCurrentUser() != null) {
+			Intent intent = new Intent(getApplicationContext(), UsersActivity.class);
+			startActivity(intent);
+		}
+	}
+
 	public void signUpLogin(View view) {
 		final EditText userInput = findViewById(R.id.userInput);
 		final EditText passwordInput = findViewById(R.id.passwordInput);
@@ -22,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void done(ParseUser user, ParseException e) {
 				if (e == null) {
-					Log.i("Login", "Success");
+					redirectUser();
 				}
 				else {
 					ParseUser newUser = new ParseUser();
@@ -33,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 						public void done(ParseException e) {
 							if (e == null) {
 								Log.i("Signup", "Success");
+								redirectUser();
 							}
 							else {
 								Toast.makeText(MainActivity.this, e.getMessage().substring(e.getMessage().indexOf(" ")), Toast.LENGTH_SHORT).show();
@@ -49,5 +58,6 @@ public class MainActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		setTitle("Twotter: Login");
+		redirectUser();
 	}
 }
