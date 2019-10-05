@@ -2,7 +2,7 @@
     <string name="app_name">Twotter</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
-    <string name="sign_up_or_login">Sign Up or Login</string>
+    <string name="sign_up">Sign Up</string>
     <string name="login">Login</string>
     <string name="or_login">or Login</string>
     <string name="or_sign_up">or Sign Up</string>

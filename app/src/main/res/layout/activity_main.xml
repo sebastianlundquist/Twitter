@@ -61,10 +61,22 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:onClick="signUpLogin"
-        android:text="@string/sign_up_or_login"
+        android:onClick="signUpOrLogin"
+        android:text="@string/sign_up"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordInput" />
+
+    <TextView
+        android:id="@+id/loginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/or_login"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/signUpButton"
+        app:layout_constraintStart_toEndOf="@+id/signUpButton"
+        app:layout_constraintTop_toTopOf="@+id/signUpButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

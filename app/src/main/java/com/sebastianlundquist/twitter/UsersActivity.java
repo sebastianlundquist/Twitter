@@ -93,7 +93,7 @@ public class UsersActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_users);
-		setTitle("Twotter: User List");
+		setTitle("Twotter: Follow");
 
 		final ListView usersList = findViewById(R.id.usersList);
 		usersList.setChoiceMode(AbsListView.CHOICE_MODE_MULTIPLE);
