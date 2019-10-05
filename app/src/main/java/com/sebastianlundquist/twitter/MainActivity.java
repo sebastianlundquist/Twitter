@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 	public void redirectUser() {
 		if (ParseUser.getCurrentUser() != null) {
-			Intent intent = new Intent(getApplicationContext(), UsersActivity.class);
+			Intent intent = new Intent(getApplicationContext(), FeedActivity.class);
 			startActivity(intent);
 		}
 	}
